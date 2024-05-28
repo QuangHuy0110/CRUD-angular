@@ -1,0 +1,14 @@
+<h2>Product List</h2>
+<ng-container *ngIf="products.length; else noProducts">
+  <ul>
+    <ng-container *ngFor="let product of products">
+      <li>
+        <a [routerLink]="['/product', product.id]">{{ product.title }}</a>
+        - {{ product.price  }}
+      </li>
+    </ng-container>
+  </ul>
+</ng-container>
+<ng-template #noProducts>
+  <p>No products available.</p>
+</ng-template>
